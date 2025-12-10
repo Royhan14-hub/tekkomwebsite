@@ -21,6 +21,15 @@ CREATE TABLE barang (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE stok_barang (
+    id_stok INT AUTO_INCREMENT PRIMARY KEY,
+    nama_barang VARCHAR(150) NOT NULL,
+    jumlah INT NOT NULL DEFAULT 0,
+    keterangan TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 CREATE TABLE barang_masuk (
     id_masuk INT AUTO_INCREMENT PRIMARY KEY,
     id_barang INT NULL,
