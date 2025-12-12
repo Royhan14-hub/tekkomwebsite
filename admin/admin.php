@@ -44,8 +44,8 @@ while($row = mysqli_fetch_assoc($q)){
         <td>{$row['jumlah']}</td>
         <td>{$row['keterangan']}</td>
         <td>
-            <a class='aksi-btn edit' href='edit_barang.php?id={$row['id']}'>Edit</a>
-            <a class='aksi-btn hapus' href='hapus_barang.php?id={$row['id']}' onclick=\"return confirm('Yakin hapus?')\">Hapus</a>
+            <a class='aksi-btn edit' href='edit_barang.php?id={$row['id_stok']}'>Edit</a>
+            <a class='aksi-btn hapus' href='hapus_barang.php?id={$row['id_stok']}' onclick=\"return confirm('Yakin hapus?')\">Hapus</a>
         </td>
     </tr>";
     $n++;

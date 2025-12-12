@@ -16,13 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = mysqli_real_escape_string($koneksi, $_POST['nama_barang']);
     $jumlah = (int) $_POST['jumlah'];
     $ket = mysqli_real_escape_string($koneksi, $_POST['keterangan']);
-    $sql = "UPDATE stok_barang SET nama_barang='$nama', jumlah=$jumlah, keterangan='$ket' WHERE id=$id";
+    $sql = "UPDATE stok_barang SET nama_barang='$nama', jumlah=$jumlah, keterangan='$ket' WHERE id_stok=$id";
     mysqli_query($koneksi, $sql);
     header("Location: ../pages/stok_barang.php");
     exit;
 }
 // Ambil data sebelumnya
-$sql = "SELECT * FROM stok_barang WHERE id=$id";
+$sql = "SELECT * FROM stok_barang WHERE id_stok=$id";
 $res = mysqli_query($koneksi, $sql);
 $row = mysqli_fetch_assoc($res);
 if (!$row) {

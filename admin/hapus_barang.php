@@ -11,6 +11,6 @@ if (!isset($_GET['id'])) {
     exit;
 }
 $id = (int) $_GET['id'];
-mysqli_query($koneksi, "DELETE FROM stok_barang WHERE id=$id");
+mysqli_query($koneksi, "DELETE FROM stok_barang WHERE id_stok=$id");
 header("Location: ../pages/stok_barang.php");
 exit;
