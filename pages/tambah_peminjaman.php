@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    header('Location: ../auth/login.php');
     exit;
 }
-include 'koneksi.php';
+include '../config/koneksi.php';
 
 // Ambil data barang untuk pilihan
 $barang = [];

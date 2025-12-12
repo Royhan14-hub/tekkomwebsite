@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'koneksi.php';
+include '../config/koneksi.php';
 
 $error = '';
 
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['username'] = $user['username'];
         $_SESSION['level'] = $user['level'];
-        header("Location: admin.php");
+        header("Location: ../admin/admin.php");
         exit;
     } else {
         $error = "Username atau password salah!";

@@ -2,12 +2,12 @@
 // edit_barang.php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    header('Location: ../auth/login.php');
     exit;
 }
-include 'koneksi.php';
+include '../config/koneksi.php';
 if (!isset($_GET['id'])) {
-    header('Location: stok_barang.php');
+    header('Location: ../pages/stok_barang.php');
     exit;
 }
 $id = (int) $_GET['id'];
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ket = mysqli_real_escape_string($koneksi, $_POST['keterangan']);
     $sql = "UPDATE stok_barang SET nama_barang='$nama', jumlah=$jumlah, keterangan='$ket' WHERE id=$id";
     mysqli_query($koneksi, $sql);
-    header("Location: stok_barang.php");
+    header("Location: ../pages/stok_barang.php");
     exit;
 }
 // Ambil data sebelumnya
@@ -26,7 +26,7 @@ $sql = "SELECT * FROM stok_barang WHERE id=$id";
 $res = mysqli_query($koneksi, $sql);
 $row = mysqli_fetch_assoc($res);
 if (!$row) {
-    header('Location: stok_barang.php');
+    header('Location: ../pages/stok_barang.php');
     exit;
 }
 ?>
@@ -52,7 +52,7 @@ if (!$row) {
         <input type="text" name="keterangan" placeholder="Keterangan" value="<?= htmlspecialchars($row['keterangan']); ?>">
         <button type="submit">Update</button>
     </form>
-    <a href="stok_barang.php">Kembali</a>
+    <a href="../pages/stok_barang.php">Kembali</a>
 </div>
 </body>
 </html>

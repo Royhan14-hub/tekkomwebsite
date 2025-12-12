@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION['username']) || $_SESSION['level'] !== 'admin') {
-    header('Location: login.php');
+    header('Location: ../auth/login.php');
     exit;
 }
-include 'koneksi.php';
+include '../config/koneksi.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@ include 'koneksi.php';
 <body>
 <div class="container">
 <h1>Dashboard Admin</h1>
-<a href="logout.php" style="float:right;">Logout</a>
+<a href="../auth/logout.php" style="float:right;">Logout</a>
 <h2>Manajemen Stok Barang</h2>
 <a href="tambah_barang.php" class="aksi-btn edit" style="background:#27ae60">Tambah Barang</a>
 <table>

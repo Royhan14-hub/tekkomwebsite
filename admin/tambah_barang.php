@@ -2,10 +2,10 @@
 // tambah_barang.php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    header('Location: ../auth/login.php');
     exit;
 }
-include 'koneksi.php';
+include '../config/koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = mysqli_real_escape_string($koneksi, $_POST['nama_barang']);
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO stok_barang (nama_barang, jumlah, keterangan)
             VALUES ('$nama', $jumlah, '$ket')";
     mysqli_query($koneksi, $sql);
-    header("Location: stok_barang.php");
+    header("Location: ../pages/stok_barang.php");
     exit;
 }
 ?>
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="keterangan" placeholder="Keterangan">
         <button type="submit">Simpan</button>
     </form>
-    <a href="stok_barang.php">Kembali</a>
+    <a href="../pages/stok_barang.php">Kembali</a>
 </div>
 </body>
 </html>

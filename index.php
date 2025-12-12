@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require "koneksi.php";
+require "config/koneksi.php";
 ?>
 
 <!DOCTYPE html>
@@ -118,12 +118,12 @@ require "koneksi.php";
 
 <!-- TOPBAR -->
 <div class="topbar">
-    <a href="login.php" class="btn">Login</a>
+    <a href="auth/login.php" class="btn">Login</a>
 </div>
 
 <!-- LOGO -->
 <div class="logo-area">
-    <img src="tekkom.jpg" alt="Logo TEKKOM">
+    <img src="assets/images/tekkom.jpg" alt="Logo TEKKOM">
 </div>
 
 <h1 class="hero-title">Peminjaman Barang</h1>
@@ -132,19 +132,19 @@ require "koneksi.php";
 <!-- MENU -->
 <div class="menu-container">
 
-    <a href="peminjaman_barang.php" class="menu-card">
+    <a href="pages/peminjaman_barang.php" class="menu-card">
         <div class="icon">📦</div>
         <h3>Peminjaman Barang</h3>
         <p>Ajukan peminjaman barang</p>
     </a>
 
-    <a href="stok_barang.php" class="menu-card">
+    <a href="pages/stok_barang.php" class="menu-card">
         <div class="icon">📋</div>
         <h3>Stok Barang</h3>
         <p>Lihat seluruh stok barang</p>
     </a>
 
-    <a href="riwayat.php" class="menu-card">
+    <a href="pages/riwayat.php" class="menu-card">
         <div class="icon">⏳</div>
         <h3>Riwayat Peminjaman</h3>
         <p>Lihat history peminjaman barang</p>

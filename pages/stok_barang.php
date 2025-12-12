@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../config/koneksi.php';
 
 // Ambil data stok barang dari database
 $query = "SELECT * FROM stok_barang";
